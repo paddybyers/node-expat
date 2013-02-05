@@ -9,11 +9,24 @@ extern "C" {
 using namespace v8;
 using namespace node;
 
+#define sym_startElement          v8::String::New("startElement")
+#define sym_endElement            v8::String::New("endElement")
+#define sym_startCdata            v8::String::New("startCdata")
+#define sym_endCdata              v8::String::New("endCdata")
+#define sym_text                  v8::String::New("text")
+#define sym_processingInstruction v8::String::New("processingInstruction")
+#define sym_comment               v8::String::New("comment")
+#define sym_xmlDecl               v8::String::New("xmlDecl")
+#define sym_entityDecl            v8::String::New("entityDecl")
+#define sym_emit                  v8::String::New("emit")
+
+/*
 static Persistent<String> sym_startElement, sym_endElement,
   sym_startCdata, sym_endCdata,
   sym_text, sym_processingInstruction,
   sym_comment, sym_xmlDecl, sym_entityDecl,
   sym_emit;
+*/
 
 class Parser : public ObjectWrap {
 public:
@@ -32,6 +45,7 @@ public:
 
     target->Set(String::NewSymbol("Parser"), t->GetFunction());
 
+/*
     sym_startElement = NODE_PSYMBOL("startElement");
     sym_endElement = NODE_PSYMBOL("endElement");
     sym_startCdata = NODE_PSYMBOL("startCdata");
@@ -42,6 +56,7 @@ public:
     sym_xmlDecl = NODE_PSYMBOL("xmlDecl");
     sym_entityDecl = NODE_PSYMBOL("entityDecl");
     sym_emit = NODE_PSYMBOL("emit");
+*/
   }
 
 protected:
